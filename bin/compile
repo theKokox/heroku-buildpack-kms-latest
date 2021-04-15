@@ -7,7 +7,7 @@ indent() {
 echo "-----> Install vlmcsd"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
-DOWNLOAD_URL="https://github.com/Wind4/vlmcsd/releases/latest/download/binaries.tar.gz"
+DOWNLOAD_URL="https://github.com/Wind4/vlmcsd.git"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
@@ -15,8 +15,10 @@ cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL | tar xz
+cd vlmcsd
+make
 
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/vlmcsd.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:${HOME}/vendor/binaries/Linux/intel/static"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:${HOME}/vendor/vlmcsd/bin"' >> $PROFILE_PATH
