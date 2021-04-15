@@ -14,8 +14,6 @@ echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-mkdir -p vlmcsd
-cd vlmcsd
 curl -L --silent $DOWNLOAD_URL | tar xz
 
 echo "exporting PATH" | indent
