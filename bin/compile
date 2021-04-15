@@ -16,7 +16,7 @@ mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 mkdir -p vlmcsd
 cd vlmcsd
-curl -L --silent $DOWNLOAD_URL | tar xzvf --strip-components=1
+curl -L --silent $DOWNLOAD_URL | tar xz --strip-components=1
 
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/vlmcsd.sh"
