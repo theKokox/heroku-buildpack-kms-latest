@@ -21,4 +21,4 @@ curl -L --silent $DOWNLOAD_URL | tar xz
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/vlmcsd.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:${HOME}/vendor/binaries/Linux/intel/static/vlmcsd-x86-musl-static"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:${HOME}/vendor/binaries/Linux/intel/static"' >> $PROFILE_PATH
